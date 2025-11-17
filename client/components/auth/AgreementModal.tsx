@@ -221,10 +221,6 @@ export default function AgreementModal({
     }
   };
 
-  const handleClose = () => {
-    onOpenChange(false);
-  };
-
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl max-h-[75vh] flex flex-col p-0">
