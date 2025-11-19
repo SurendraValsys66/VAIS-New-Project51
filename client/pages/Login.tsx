@@ -88,7 +88,8 @@ export default function Login() {
       name: "Brian M.",
       title: "Sales Development Rep",
       quote: "Finding Hot Leads Has Never Been This Easy",
-      review: "I like how Valasys AI tells me which companies are actually ready to hear from us. As an Sales Development Rep, I need to know who to call first. The score makes that super clear. I also like the contact lists—it helps me find the right people in each company so I don't waste time hunting them down.",
+      review:
+        "I like how Valasys AI tells me which companies are actually ready to hear from us. As an Sales Development Rep, I need to know who to call first. The score makes that super clear. I also like the contact lists—it helps me find the right people in each company so I don't waste time hunting them down.",
       initials: "BM",
       color: "from-valasys-orange to-valasys-orange-light",
       rating: 5,
@@ -96,11 +97,16 @@ export default function Login() {
   ];
 
   const nextTestimonial = () => {
-    setCurrentTestimonialIndex((prev) => (prev + 1) % (testimonials.length - 1));
+    setCurrentTestimonialIndex(
+      (prev) => (prev + 1) % (testimonials.length - 1),
+    );
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonialIndex((prev) => (prev - 1 + (testimonials.length - 1)) % (testimonials.length - 1));
+    setCurrentTestimonialIndex(
+      (prev) =>
+        (prev - 1 + (testimonials.length - 1)) % (testimonials.length - 1),
+    );
   };
 
   useEffect(() => {
@@ -611,7 +617,9 @@ export default function Login() {
             </p>
             <h2 className="text-3xl font-bold text-valasys-gray-900 leading-tight">
               Your AI Scoring <br />
-              <span className="text-valasys-orange">Revolution Starts Here</span>
+              <span className="text-valasys-orange">
+                Revolution Starts Here
+              </span>
             </h2>
           </div>
 
@@ -651,10 +659,14 @@ export default function Login() {
                 {/* Stats Badges Overlay */}
                 <div className="absolute bottom-4 left-4 right-4 flex gap-3">
                   <div className="bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 text-xs">
-                    <p className="font-semibold text-valasys-gray-900">AI-Powered</p>
+                    <p className="font-semibold text-valasys-gray-900">
+                      AI-Powered
+                    </p>
                   </div>
                   <div className="bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 text-xs">
-                    <p className="font-semibold text-valasys-gray-900">Real-time</p>
+                    <p className="font-semibold text-valasys-gray-900">
+                      Real-time
+                    </p>
                   </div>
                   <div className="bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 text-xs">
                     <p className="font-semibold text-valasys-gray-900">Smart</p>
@@ -687,7 +699,10 @@ export default function Login() {
               <div className="relative">
                 {/* Testimonial Cards Grid (2 visible) */}
                 <div className="grid grid-cols-2 gap-6">
-                  {[currentTestimonialIndex, (currentTestimonialIndex + 1) % testimonials.length].map((index) => {
+                  {[
+                    currentTestimonialIndex,
+                    (currentTestimonialIndex + 1) % testimonials.length,
+                  ].map((index) => {
                     const testimonial = testimonials[index];
                     return (
                       <div
@@ -697,7 +712,9 @@ export default function Login() {
                         {/* Header: Avatar and Name */}
                         <div className="flex items-start justify-between gap-4 mb-5">
                           <div className="flex items-start gap-3 flex-1">
-                            <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${testimonial.color} flex items-center justify-center text-white text-sm font-bold flex-shrink-0 shadow-md`}>
+                            <div
+                              className={`w-14 h-14 rounded-full bg-gradient-to-br ${testimonial.color} flex items-center justify-center text-white text-sm font-bold flex-shrink-0 shadow-md`}
+                            >
                               {testimonial.initials}
                             </div>
                             <div className="flex-1 pt-1">
@@ -711,16 +728,25 @@ export default function Login() {
                           </div>
                           {/* G2 Badge Icon */}
                           <div className="w-10 h-10 rounded-full bg-valasys-orange/20 flex items-center justify-center flex-shrink-0">
-                            <span className="text-valasys-orange text-xs font-bold">G2</span>
+                            <span className="text-valasys-orange text-xs font-bold">
+                              G2
+                            </span>
                           </div>
                         </div>
 
                         {/* Rating Stars */}
                         <div className="flex gap-0.5 mb-4">
                           {[...Array(testimonial.rating)].map((_, i) => (
-                            <span key={i} className="text-valasys-orange text-lg leading-none">★</span>
+                            <span
+                              key={i}
+                              className="text-valasys-orange text-lg leading-none"
+                            >
+                              ★
+                            </span>
                           ))}
-                          <span className="text-xs text-valasys-gray-600 ml-2 font-medium">5.0 out of 5</span>
+                          <span className="text-xs text-valasys-gray-600 ml-2 font-medium">
+                            5.0 out of 5
+                          </span>
                         </div>
 
                         {/* Review Title/Quote */}
@@ -742,8 +768,18 @@ export default function Login() {
                   onClick={prevTestimonial}
                   className="absolute -left-5 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/70 backdrop-blur-sm border border-white/30 hover:bg-white/90 hover:border-valasys-orange/30 transition-all duration-300 group"
                 >
-                  <svg className="w-4 h-4 text-valasys-gray-600 group-hover:text-valasys-orange transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <svg
+                    className="w-4 h-4 text-valasys-gray-600 group-hover:text-valasys-orange transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
                   </svg>
                 </button>
 
@@ -751,8 +787,18 @@ export default function Login() {
                   onClick={nextTestimonial}
                   className="absolute -right-5 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/70 backdrop-blur-sm border border-white/30 hover:bg-white/90 hover:border-valasys-orange/30 transition-all duration-300 group"
                 >
-                  <svg className="w-4 h-4 text-valasys-gray-600 group-hover:text-valasys-orange transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 text-valasys-gray-600 group-hover:text-valasys-orange transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </button>
 
