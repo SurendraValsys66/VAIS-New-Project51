@@ -138,7 +138,8 @@ export function AddPaymentMethodDialog({
     expiryDate: editingMethod?.expiryDate || "",
     cvc: "",
     country: "United States",
-    paypalEmail: editingMethod?.type === "paypal" ? editingMethod.cardNumber : "",
+    paypalEmail:
+      editingMethod?.type === "paypal" ? editingMethod.cardNumber : "",
   });
   const [errors, setErrors] = useState<ValidationError[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -150,9 +151,7 @@ export function AddPaymentMethodDialog({
 
   useEffect(() => {
     if (open && editingMethod) {
-      setPaymentType(
-        editingMethod.type === "paypal" ? "paypal" : "card",
-      );
+      setPaymentType(editingMethod.type === "paypal" ? "paypal" : "card");
       setFormData({
         cardholderName: editingMethod.cardholderName || "",
         cardNumber: editingMethod.cardNumber || "",
@@ -195,7 +194,9 @@ export function AddPaymentMethodDialog({
     let validationErrors = validateCardForm(formData);
 
     if (isEditMode) {
-      validationErrors = validationErrors.filter((e) => e.field !== "cardNumber" && e.field !== "cvc");
+      validationErrors = validationErrors.filter(
+        (e) => e.field !== "cardNumber" && e.field !== "cvc",
+      );
     }
 
     setErrors(validationErrors);
@@ -213,7 +214,8 @@ export function AddPaymentMethodDialog({
       expiryDate: formData.expiryDate,
       cardholderName: formData.cardholderName,
       isDefault: editingMethod?.isDefault ?? false,
-      lastUsed: editingMethod?.lastUsed || new Date().toISOString().split("T")[0],
+      lastUsed:
+        editingMethod?.lastUsed || new Date().toISOString().split("T")[0],
       status: editingMethod?.status ?? "active",
       autopayEnabled: editingMethod?.autopayEnabled ?? true,
     };
@@ -240,7 +242,8 @@ export function AddPaymentMethodDialog({
       expiryDate: "",
       cardholderName: "PayPal Account",
       isDefault: editingMethod?.isDefault ?? false,
-      lastUsed: editingMethod?.lastUsed || new Date().toISOString().split("T")[0],
+      lastUsed:
+        editingMethod?.lastUsed || new Date().toISOString().split("T")[0],
       status: editingMethod?.status ?? "active",
       autopayEnabled: editingMethod?.autopayEnabled ?? true,
     };
@@ -531,7 +534,9 @@ export function AddPaymentMethodDialog({
                       <span className="hidden sm:inline">
                         {isEditMode ? "Update Card" : "Add Card"}
                       </span>
-                      <span className="sm:hidden">{isEditMode ? "Update" : "Add"}</span>
+                      <span className="sm:hidden">
+                        {isEditMode ? "Update" : "Add"}
+                      </span>
                     </div>
                   )}
                 </Button>
@@ -610,7 +615,9 @@ export function AddPaymentMethodDialog({
                       <span className="hidden sm:inline">
                         {isEditMode ? "Update PayPal" : "Add PayPal"}
                       </span>
-                      <span className="sm:hidden">{isEditMode ? "Update" : "Add"}</span>
+                      <span className="sm:hidden">
+                        {isEditMode ? "Update" : "Add"}
+                      </span>
                     </div>
                   )}
                 </Button>
