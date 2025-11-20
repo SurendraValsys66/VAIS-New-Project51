@@ -183,16 +183,16 @@ export function AddPaymentMethodDialog({
     await new Promise((resolve) => setTimeout(resolve, 800));
 
     const newMethod: PaymentMethod = {
-      id: `pm_${Date.now()}`,
+      id: editingMethod?.id || `pm_${Date.now()}`,
       type: "credit_card",
       cardNetwork: cardNetwork || "Card",
       cardNumber: formData.cardNumber.slice(-4),
       expiryDate: formData.expiryDate,
       cardholderName: formData.cardholderName,
-      isDefault: false,
-      lastUsed: new Date().toISOString().split("T")[0],
-      status: "active",
-      autopayEnabled: true,
+      isDefault: editingMethod?.isDefault ?? false,
+      lastUsed: editingMethod?.lastUsed || new Date().toISOString().split("T")[0],
+      status: editingMethod?.status ?? "active",
+      autopayEnabled: editingMethod?.autopayEnabled ?? true,
     };
 
     onAdd(newMethod);
