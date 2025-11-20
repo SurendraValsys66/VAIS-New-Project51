@@ -344,10 +344,10 @@ export function AddPaymentMethodDialog({
                       placeholder="1234 1234 1234 1234"
                       value={formData.cardNumber}
                       onChange={handleCardNumberChange}
-                      className={`h-12 text-base font-mono tracking-wider transition-all border-2 focus:ring-2 focus:ring-blue-400 focus:ring-opacity-30 ${
+                      className={`h-10 md:h-12 text-sm md:text-base font-mono tracking-wider transition-all border-2 focus:ring-2 focus:ring-valasys-orange/30 ${
                         getErrorMessage("cardNumber")
                           ? "border-red-500 focus:border-red-500"
-                          : "border-gray-200 focus:border-blue-500"
+                          : "border-gray-200 focus:border-valasys-orange"
                       }`}
                       maxLength={19}
                     />
